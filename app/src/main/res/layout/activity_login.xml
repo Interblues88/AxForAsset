@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="#000000"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -15,9 +16,10 @@
         />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:id="@+id/username_input"
+        android:minHeight="48dp"
         android:layout_marginTop="40dp"
         android:hint="Username"
         android:layout_marginStart="16dp"
@@ -30,20 +32,26 @@
     <EditText
         android:id="@+id/password_input"
         android:layout_marginTop="40dp"
+        android:minHeight="48dp"
         android:hint="Password"
         android:background="@drawable/rounded_corners"
         android:inputType="textPassword"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         />
 
     <Button
         android:id="@+id/registerBtn"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:background="@drawable/button_login_background"
         android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Register"/>
+
 </LinearLayout>
