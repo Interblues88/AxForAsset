@@ -9,6 +9,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
+        android:layout_marginTop="40dp"
         android:id="@+id/logo"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -21,37 +22,52 @@
         android:id="@+id/username_input"
         android:layout_marginTop="40dp"
         android:hint="Username"
-        android:textSize="15sp"
+        android:textColorHint="#999999"
+        android:textSize="12sp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corners"
-        android:padding="10dp"
+        android:paddingLeft="10pt"
+        android:paddingRight="10pt"
+        android:paddingTop="4pt"
+        android:paddingBottom="4pt"
         android:inputType="text"
+        android:fontFamily="@font/montserrat"
         />
 
     <EditText
         android:id="@+id/password_input"
-        android:layout_marginTop="40dp"
-        android:hint="Password"
-        android:textSize="15sp"
-        android:background="@drawable/rounded_corners"
-        android:inputType="textPassword"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corners"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10pt"
+        android:paddingRight="10pt"
+        android:paddingTop="4pt"
+        android:paddingBottom="4pt"
+        android:textColorHint="#999999"
+        android:fontFamily="@font/montserrat"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_login_background"
         android:layout_marginTop="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Register"
+        android:text="LOGIN"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"
         />
+
+
 
 </LinearLayout>
