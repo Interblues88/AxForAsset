@@ -13,14 +13,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 //        Tes Change 1
 //        change 2
 //        hello
         // ini jenni hehe
 //        setContentView(R.layout.activity_main);
 //        registerBtn =findViewById(R.id.registerBtn);
-
+//
 //        registerBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

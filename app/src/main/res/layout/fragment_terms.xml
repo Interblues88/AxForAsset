@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TermsFragment">
+    tools:context=".TermsFragment"
+    android:padding="20dp">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="1. Acceptance of Terms
+By using the AxforAsset application, you agree to comply with and be bound by these terms. If you do not agree to these terms, please do not use the application.
+\n\n2. Eligibility
+To use AxforAsset, you must be at least 18 years old or have reached the age of majority in your jurisdiction.
+\n\n3. Account Registration
+To access certain features of the application, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information as necessary.
+" />
 
-</FrameLayout>
+</LinearLayout>
