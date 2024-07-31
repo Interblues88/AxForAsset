@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,23 +16,23 @@
         />
 
     <EditText
+        android:id="@+id/username_input"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:id="@+id/username_input"
-        android:layout_marginTop="40dp"
-        android:hint="Username"
-        android:textColorHint="#999999"
-        android:textSize="12sp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corners"
-        android:paddingLeft="10pt"
-        android:paddingRight="10pt"
-        android:paddingTop="4pt"
-        android:paddingBottom="4pt"
-        android:inputType="text"
         android:fontFamily="@font/montserrat"
-        />
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingLeft="10pt"
+        android:paddingTop="4pt"
+        android:paddingRight="10pt"
+        android:paddingBottom="4pt"
+        android:textColorHint="#999999"
+        android:textColor = "#fff"
+        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/password_input"
@@ -50,6 +49,7 @@
         android:paddingTop="4pt"
         android:paddingBottom="4pt"
         android:textColorHint="#999999"
+        android:textColor = "#fff"
         android:fontFamily="@font/montserrat"
         android:textSize="12sp" />
 
@@ -68,6 +68,15 @@
         android:textStyle="bold"
         />
 
-
-
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>

@@ -11,7 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -22,7 +22,6 @@ public class HomeActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
-
     TabPagerAdapter tabPagerAdapter;
     ViewPager2 viewPager2;
 
@@ -32,6 +31,14 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // Retrieve the username from the Intent extras
+        String username = getIntent().getStringExtra("USERNAME");
+
+        // Find the TextView and set the username
+        TextView welcomeTextView = findViewById(R.id.welcomeTextView);
+        welcomeTextView.setText("Welcome, " + username + "!");
+
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
@@ -58,9 +65,8 @@ public class HomeActivity extends AppCompatActivity {
         compositePageTransform.addTransformer(new ViewPager2.PageTransformer() {
             @Override
             public void transformPage(@NonNull View page, float position) {
-                float r  = 1-Math.abs(position);
-                page.setScaleY(0.85f + r*0.15f);
-
+                float r  = 1 - Math.abs(position);
+                page.setScaleY(0.85f + r * 0.15f);
             }
         });
 
