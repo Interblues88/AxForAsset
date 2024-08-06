@@ -2,6 +2,7 @@ package com.example.axforasset;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private boolean validateInputs(String username, String password) {
         if (username.isEmpty()) {
             errorMessage.setText("Username must not be empty!");

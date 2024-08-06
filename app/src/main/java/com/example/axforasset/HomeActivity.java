@@ -2,16 +2,25 @@ package com.example.axforasset;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
+
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,9 +33,9 @@ public class HomeActivity extends AppCompatActivity {
     ViewPager viewPager;
     TabPagerAdapter tabPagerAdapter;
     ViewPager2 viewPager2;
+    ImageView rightIcon;
 
     private Handler slideHandler = new Handler();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +55,24 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.setAdapter(tabPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
+
+//      Menu in here
+        rightIcon = findViewById(R.id.right_icon);
+
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
+        });
+
+//        Slider disini
         viewPager2 = findViewById(R.id.viewPager2);
 
         List<SlideItem> slideritem = new ArrayList<>();
+        slideritem.add(new SlideItem(R.drawable.carousel1));
+        slideritem.add(new SlideItem(R.drawable.carousel2));
+        slideritem.add(new SlideItem(R.drawable.carousel3));
         slideritem.add(new SlideItem(R.drawable.carousel1));
         slideritem.add(new SlideItem(R.drawable.carousel2));
         slideritem.add(new SlideItem(R.drawable.carousel3));
@@ -71,6 +95,8 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         viewPager2.setPageTransformer(compositePageTransform);
+        viewPager2.setCurrentItem(3, false);
+
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -101,4 +127,40 @@ public class HomeActivity extends AppCompatActivity {
         super.onResume();
         slideHandler.postDelayed(sliderRunnable, 3000);
     }
+
+//    menu pop up
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.home_menu, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.items:
+                        Toast.makeText(HomeActivity.this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.proflile:
+                        Toast.makeText(HomeActivity.this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.logout:
+                        Toast.makeText(HomeActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(intent);
+
+                        finish();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+
+        popupMenu.show();
+    }
+
 }
+
+
+

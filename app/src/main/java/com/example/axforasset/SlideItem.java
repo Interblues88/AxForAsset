@@ -1,8 +1,6 @@
 package com.example.axforasset;
 
 public class SlideItem {
-
-
     private int image;
 
     SlideItem(int image){
