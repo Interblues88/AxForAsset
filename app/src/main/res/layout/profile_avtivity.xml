@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:layout_gravity="center_horizontal">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:text="Welcome, Username!" />
+
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <!-- Email Section -->
+        <TextView
+            android:id="@+id/tv_email_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="30dp"/>
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Username@gmail.com"
+            android:textColor="#808080"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Job Section -->
+        <TextView
+            android:id="@+id/tv_job_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Input your job"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#808080"
+            android:padding="8dp"
+            android:paddingLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"/>
+
+        <!-- Address Section -->
+        <TextView
+            android:id="@+id/tv_address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Input your address"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#808080"
+            android:padding="8dp"
+            android:paddingLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"/>
+
+        <!-- Phone Number Section -->
+        <TextView
+            android:id="@+id/tv_phone_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corners"
+            android:hint="Input your phone number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#808080"
+            android:padding="8dp"
+            android:paddingLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/userborder"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_image"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/userprofile"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/rounded_image"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/userprofile" />
+
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/formContainer"
+        android:layout_centerHorizontal="true"
+        android:text="Save"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold" />
+
+</RelativeLayout>
