@@ -9,15 +9,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:text="My Application"-->
-<!--            android:layout_centerVertical="true"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textColor="@android:color/white"/>-->
-
         <ImageView
             android:layout_width="130dp"
             android:layout_height="47dp"

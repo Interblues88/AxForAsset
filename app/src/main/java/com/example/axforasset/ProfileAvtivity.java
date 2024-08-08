@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfileAvtivity extends AppCompatActivity {
@@ -16,6 +17,13 @@ public class ProfileAvtivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_avtivity);
+
+        // Retrieve the username from the Intent extras
+        String username = getIntent().getStringExtra("USERNAME");
+
+        // Find the TextView and set the username
+        TextView welcomeTextView = findViewById(R.id.welcomeTextView);
+        welcomeTextView.setText("Welcome, " + username + "!");
 
         rightIcon = findViewById(R.id.right_icon);
 
@@ -29,14 +37,17 @@ public class ProfileAvtivity extends AppCompatActivity {
 
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
-        popupMenu.getMenuInflater().inflate(R.menu.home_menu, popupMenu.getMenu());
+        popupMenu.getMenuInflater().inflate(R.menu.profile_menu, popupMenu.getMenu());
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            String username = getIntent().getStringExtra("USERNAME");
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.home:
-                        Toast.makeText(ProfileAvtivity.this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
+                        Intent intents = new Intent(ProfileAvtivity.this, HomeActivity.class);
+                        intents.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intents);
                         return true;
                     case R.id.items:
                         Toast.makeText(ProfileAvtivity.this, "Item 2 clicked", Toast.LENGTH_SHORT).show();

@@ -134,6 +134,8 @@ public class HomeActivity extends AppCompatActivity {
         popupMenu.getMenuInflater().inflate(R.menu.home_menu, popupMenu.getMenu());
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            String username = getIntent().getStringExtra("USERNAME");
+
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
@@ -141,7 +143,9 @@ public class HomeActivity extends AppCompatActivity {
                         Toast.makeText(HomeActivity.this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.profile:
-                        Toast.makeText(HomeActivity.this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+                        Intent intents = new Intent(HomeActivity.this, ProfileAvtivity.class);
+                        intents.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intents);
                         return true;
                     case R.id.logout:
                         Toast.makeText(HomeActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
