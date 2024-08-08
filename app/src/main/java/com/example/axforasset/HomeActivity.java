@@ -140,7 +140,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.items:
                         Toast.makeText(HomeActivity.this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
                         return true;
-                    case R.id.proflile:
+                    case R.id.profile:
                         Toast.makeText(HomeActivity.this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.logout:
