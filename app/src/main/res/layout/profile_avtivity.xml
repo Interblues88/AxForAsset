@@ -146,18 +146,4 @@
         android:scaleType="centerCrop"
         android:src="@drawable/userprofile" />
 
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/formContainer"
-        android:layout_centerHorizontal="true"
-        android:text="Save"
-        android:textSize="13sp"
-        android:textColor="@color/white"
-        android:background="@drawable/bg"
-        android:fontFamily="@font/montserrat"
-        android:textStyle="bold" />
-
 </RelativeLayout>
