@@ -55,7 +55,7 @@
             android:textColor="#808080"
             android:textSize="14sp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/montserrat"/>
+            android:fontFamily="@font/montserrat_bold"/>
 
         <!-- Job Section -->
         <TextView
@@ -77,7 +77,7 @@
             android:textColor="#808080"
             android:textSize="14sp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/montserrat"/>
+            android:fontFamily="@font/montserrat_bold"/>
 
         <!-- Address Section -->
         <TextView
@@ -99,7 +99,7 @@
             android:textColor="#808080"
             android:textSize="14sp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/montserrat"/>
+            android:fontFamily="@font/montserrat_bold"/>
 
         <!-- Phone Number Section -->
         <TextView
@@ -120,7 +120,8 @@
             android:text="08163516351635"
             android:textColor="#808080"
             android:textSize="14sp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_bold"/>
     </LinearLayout>
 
     <ImageView
