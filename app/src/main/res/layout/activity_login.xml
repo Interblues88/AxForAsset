@@ -64,8 +64,7 @@
         android:textSize="13sp"
         android:textColor="@color/white"
         android:background="@drawable/bg"
-        android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
         />
 
     <TextView

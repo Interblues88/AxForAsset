@@ -25,6 +25,9 @@ public class ProfileAvtivity extends AppCompatActivity {
         TextView welcomeTextView = findViewById(R.id.welcomeTextView);
         welcomeTextView.setText("Welcome, " + username + "!");
 
+        TextView userTextView = findViewById(R.id.userEmail);
+        userTextView.setText( username + "@gmail.com");
+
         rightIcon = findViewById(R.id.right_icon);
 
         rightIcon.setOnClickListener(new View.OnClickListener() {

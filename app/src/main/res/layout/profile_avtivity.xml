@@ -18,7 +18,8 @@
         android:layout_marginTop="90dp"
         android:textSize="25sp"
         android:textColor="@color/white"
-        android:text="Welcome, Username!" />
+        android:text="Welcome, Username!"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <LinearLayout
         android:id="@+id/formContainer"
@@ -30,7 +31,8 @@
         android:orientation="vertical"
         android:padding="15dp"
         android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp">
+        android:layout_marginRight="45dp"
+        android:fontFamily="@font/montserrat">
 
         <!-- Email Section -->
         <TextView
@@ -41,7 +43,8 @@
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:paddingTop="30dp"/>
+            android:paddingTop="30dp"
+            android:fontFamily="@font/montserrat_bold"/>
 
         <TextView
             android:id="@+id/userEmail"
@@ -51,7 +54,8 @@
             android:text="Username@gmail.com"
             android:textColor="#808080"
             android:textSize="14sp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat"/>
 
         <!-- Job Section -->
         <TextView
@@ -61,21 +65,19 @@
             android:text="Job"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold" />
 
-        <EditText
-            android:id="@+id/et_job"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/userJob"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_corners"
-            android:hint="Input your job"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#808080"
-            android:padding="8dp"
-            android:paddingLeft="12dp"
+            android:text="Sofware Engineering"
+            android:textColor="#808080"
+            android:textSize="14sp"
             android:layout_marginTop="10dp"
-            android:textSize="14sp"/>
+            android:fontFamily="@font/montserrat"/>
 
         <!-- Address Section -->
         <TextView
@@ -85,21 +87,19 @@
             android:text="Address"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold" />
 
-        <EditText
-            android:id="@+id/et_address"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/userAddress"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_corners"
-            android:hint="Input your address"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#808080"
-            android:padding="8dp"
-            android:paddingLeft="12dp"
+            android:text="Jl. Pakuan No 3"
+            android:textColor="#808080"
+            android:textSize="14sp"
             android:layout_marginTop="10dp"
-            android:textSize="14sp"/>
+            android:fontFamily="@font/montserrat"/>
 
         <!-- Phone Number Section -->
         <TextView
@@ -109,21 +109,18 @@
             android:text="Phone Number"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold" />
 
-        <EditText
-            android:id="@+id/et_phone"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/userPhone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_corners"
-            android:hint="Input your phone number"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#808080"
-            android:padding="8dp"
-            android:paddingLeft="12dp"
-            android:layout_marginTop="10dp"
-            android:textSize="14sp"/>
+            android:text="08163516351635"
+            android:textColor="#808080"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
     <ImageView
