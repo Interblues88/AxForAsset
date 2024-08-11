@@ -1,7 +1,14 @@
 package com.example.axforasset;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,12 +17,25 @@ import java.util.List;
 
 public class ListItemActivity extends AppCompatActivity {
 
+    ImageView rightIcon;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items); // Use the corresponding layout file for your Activity
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
+        //Menu in here
+        rightIcon = findViewById(R.id.right_icon);
+
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(v);
+            }
+        });
 
         List<Product> ProductList = new ArrayList<>();
         ProductList.add(new Product("Treasure Hunt", "Uncover the secrets of lost riches with this intricately crafted ancient treasure map, an essential tool for any daring treasure hunter. Hand-drawn on weathered parchment, the map is adorned with faded ink markings","Perfect for developers and players who crave immersive exploration.", R.drawable.game_icon1));
@@ -28,4 +48,43 @@ public class ListItemActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 //        return view;
     }
+
+    //    menu pop up
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.getMenuInflater().inflate(R.menu.item_menu, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            String username = getIntent().getStringExtra("USERNAME");
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        Intent intentss = new Intent(ListItemActivity.this, HomeActivity.class);
+                        intentss.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intentss);
+                        return true;
+                    case R.id.profile:
+                        Intent intents = new Intent(ListItemActivity.this, ProfileAvtivity.class);
+                        intents.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intents);
+                        return true;
+                    case R.id.logout:
+                        Toast.makeText(ListItemActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(ListItemActivity.this, LoginActivity.class);
+                        startActivity(intent);
+
+                        finish();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+
+        popupMenu.show();
+    }
+
 }

@@ -23,7 +23,7 @@ public class ProfileAvtivity extends AppCompatActivity {
 
         // Find the TextView and set the username
         TextView welcomeTextView = findViewById(R.id.welcomeTextView);
-        welcomeTextView.setText("Welcome, " + username + "!");
+        welcomeTextView.setText("Hi, " + username);
 
         TextView userTextView = findViewById(R.id.userEmail);
         userTextView.setText( username + "@gmail.com");
@@ -53,10 +53,11 @@ public class ProfileAvtivity extends AppCompatActivity {
                         startActivity(intents);
                         return true;
                     case R.id.items:
-                        Toast.makeText(ProfileAvtivity.this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+                        Intent intentss = new Intent(ProfileAvtivity.this, ListItemActivity.class);
+                        intentss.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intentss);
                         return true;
                     case R.id.profile:
-                        Toast.makeText(ProfileAvtivity.this, "Item 3 clicked", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.logout:
                         Toast.makeText(ProfileAvtivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
