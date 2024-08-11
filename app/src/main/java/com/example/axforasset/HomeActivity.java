@@ -125,7 +125,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        slideHandler.postDelayed(sliderRunnable, 3000);
+        slideHandler.postDelayed(sliderRunnable, 2000);
     }
 
 //    menu pop up

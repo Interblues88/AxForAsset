@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/item_image"
@@ -43,7 +42,7 @@
                 android:text="Game Title"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/montserrat_bold"/>
 
             <TextView
                 android:id="@+id/item_description"
@@ -54,6 +53,7 @@
                 android:textSize="14sp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
+                android:fontFamily="@font/montserrat"
                 />
 
             <Button
@@ -64,7 +64,7 @@
                 android:text="Detail"
                 android:background="@drawable/bg"
                 android:textColor="@color/white"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/montserrat_bold"
                 android:textStyle="bold"
 
                 />
