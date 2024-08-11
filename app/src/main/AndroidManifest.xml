@@ -15,6 +15,12 @@
             android:name=".ProfileAvtivity"
             android:exported="false" />
         <activity
+            android:name=".ListItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

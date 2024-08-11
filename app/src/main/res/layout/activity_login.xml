@@ -63,14 +63,8 @@
         android:text="LOGIN"
         android:textSize="13sp"
         android:background="@drawable/bg"
-<<<<<<< Updated upstream
         android:fontFamily="@font/montserrat_bold"
-=======
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
->>>>>>> Stashed changes
-        />
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/error_message"
