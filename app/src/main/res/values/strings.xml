@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">AxForAsset</string>
+    <string-array name="payment_method">
+        <item>Visa</item>
+        <item>Master Card</item>
+        <item>Credit Card</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

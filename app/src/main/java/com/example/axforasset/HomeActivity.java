@@ -140,7 +140,9 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.items:
-                        Toast.makeText(HomeActivity.this, "Item 1 clicked", Toast.LENGTH_SHORT).show();
+                        Intent intentss = new Intent(HomeActivity.this, ListItemActivity.class);
+                        intentss.putExtra("USERNAME", username); // Pass the username
+                        startActivity(intentss);
                         return true;
                     case R.id.profile:
                         Intent intents = new Intent(HomeActivity.this, ProfileAvtivity.class);
@@ -160,6 +162,11 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
 
         popupMenu.show();
     }
