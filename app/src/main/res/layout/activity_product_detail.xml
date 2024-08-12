@@ -1,126 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/black"
-    >
-    <!-- Product Image -->
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_margin="0dp"
-        android:background="@color/white"
-        app:cardCornerRadius="24dp"
-        android:elevation="4dp"
-       >
-        <ImageView
-            android:id="@+id/detail_image"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/black">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg"
+            android:layout_marginStart="4dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:contentDescription="Back"
+            app:tint="@color/white"
+            />
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Product Image"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="230dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            app:cardCornerRadius="24dp"
+            android:elevation="4dp">
 
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:contentDescription="Product Image" />
+        </androidx.cardview.widget.CardView>
 
-    <!-- Product Title -->
-    <TextView
-        android:id="@+id/detail_title"
-        android:text=""
-        android:layout_marginTop="18dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="42dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_marginTop="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="42dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
-    <!-- Product Description -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:textSize="22sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_semibold"/>
-    <TextView
-        android:id="@+id/detail_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:fontFamily="@font/montserrat"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold" />
 
-    <!-- Email Prompt -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter your Email Address:"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat_semibold"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/detail_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat" />
 
-    <!-- Email Address Info -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This email address will be used to send the game assets you purchased."
-        android:textSize="14sp"
-        android:layout_marginTop="6dp"
-        android:textColor="@color/white"
-        />
-    <!-- Email Input Field -->
-    <EditText
-        android:id="@+id/email_input"
-        android:layout_width="match_parent"
-        android:layout_marginTop="4dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/montserrat"
-        android:hint="Username@gmail.com"
-        android:inputType="text"
-        android:paddingLeft="10pt"
-        android:paddingTop="4pt"
-        android:paddingRight="10pt"
-        android:paddingBottom="4pt"
-        android:textColorHint="#999999"
-        android:textColor = "#fff"
-        android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your Email Address"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_semibold"
+            android:layout_marginTop="19dp" />
 
-    <!-- Payment Method Prompt -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Payment Method:"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat_semibold"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This email address will be used to send the game assets you purchased."
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white" />
 
-    <Spinner
-        android:id="@+id/payment_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/payment_method"
-        android:textColor="@color/white"
-        android:background="@color/white"
-        android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:fontFamily="@font/montserrat"
+            android:hint="Username@gmail.com"
+            android:inputType="text"
+            android:paddingLeft="10pt"
+            android:paddingTop="4pt"
+            android:paddingRight="10pt"
+            android:paddingBottom="4pt"
+            android:textColorHint="#999999"
+            android:textColor="#fff"
+            android:textSize="12sp" />
 
-    <Button
-        android:layout_marginTop="70dp"
-        android:id="@+id/buy_button"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="Buy"
-        android:background="@drawable/bg"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textStyle="bold" />
+        <!-- Payment Method Prompt -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Method"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_semibold"
+            android:layout_marginTop="16dp" />
 
-</LinearLayout>
+        <Spinner
+            android:id="@+id/payment_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/payment_method"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
+            android:background="@color/white"
+            android:layout_marginTop="14dp" />
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:id="@+id/buy_button"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            android:background="@drawable/bg"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

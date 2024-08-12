@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +32,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         TextView titleView = findViewById(R.id.detail_title);
         TextView descriptionView = findViewById(R.id.detail_description);
         Spinner paymentSpinner = findViewById(R.id.payment_spinner);
+        ImageView backBtn = findViewById(R.id.back_button);
+        backBtn.setOnClickListener(v -> onBackPressed());
 
         emailInput = findViewById(R.id.email_input);
         buyButton = findViewById(R.id.buy_button);
@@ -60,13 +63,13 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
 
     private void validateAndBuy() {
-        String email = emailInput.getText().toString().trim();
+        String email = emailInput.getText().toString();
         if (email.isEmpty()) {
-            showDialog("Email must be filled", false);
+            showDialog("Email must be filled                         ", false);
 //            showSimpleDialog();
         } else if (!email.contains("@gmail.com")) {
 
-            showDialog("Email must contain '@gmail.com'", false);
+            showDialog("Email must contain '@gmail.com'   ", false);
         } else {
             // Proceed with the purchase
             showDialog("Confirmation email has been sent to your email address", true);
@@ -77,10 +80,9 @@ public class ProductDetailActivity extends AppCompatActivity {
 //        Toast.makeText(ProductDetailActivity.this, message, Toast.LENGTH_SHORT).show();
 //    }
     private void showDialog(String message, boolean isSuccess) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialogTheme);
         // Inflate custom layout
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_custom, null);
-
 
         TextView title = dialogView.findViewById(R.id.dialog_title);
         TextView messageText = dialogView.findViewById(R.id.dialog_message);
@@ -93,11 +95,12 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         if (isSuccess) {
             title.setText("Success!");
+            button.setText("Back to item list");
+
         } else {
             title.setText("Error");
         }
         messageText.setText(message);
-
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
@@ -105,6 +108,13 @@ public class ProductDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss(); // Close the dialog when the button is clicked
+                if (isSuccess) {
+                    // Redirect to the item list activity
+                    Intent intent = new Intent(ProductDetailActivity.this, ListItemActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish(); // Close the current activity
+                }
             }
 
         });
